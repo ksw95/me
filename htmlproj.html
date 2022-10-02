@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <meta charset="utf-8">
+  <title>Streaming video processing with GPU.js</title>
+  <script src="js/gpu-browser.min.js"></script>
+</head>
+<body>
+<h1>Streaming video processing with GPU.js</h1>
+
+<div>
+<!-- <div style="text-align: center"> -->
+  <label><input type="checkbox" id="gpu-enabled" checked /> GPU enabled</label><br />
+  <label><input type="checkbox" id="red-colour" checked />Red Colour</label><br />
+  <label><input type="checkbox" id="green-colour" checked />Green Colour</label><br />
+  <label><input type="checkbox" id="blue-colour" checked />Blue Colour</label><br />
+  <label><input type="range" step="1" min="1" max="10" value="1" id="blur" /> Blur Video</label><br />
+  <label><input type="checkbox" id="sobel-filter" /> Edge Filter</label><br />
+</div>
+
+<video hidden id="video" width="1024" height="768"></video>
+<canvas hidden id="videoCanvas" width="1024" height="768"></canvas>
+
+<script src="js/videosetup.js"></script>
+
+<div id="canvas-parent" class="grid-item">
+  <h3>GPU.js Graphical Output <span id="fps-number">0</span><span> fps</span></h3>
+</div>
+
+<script src="js/kernels.js"></script>
+<script src="js/kernelproj.js?cach"></script>
+
+</body>
+</html>
